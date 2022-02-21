@@ -9,8 +9,8 @@ const Display = () => {
    const [searchTerm, setSearchTerm] = useState("");
 
    const handleSubmit = (search) => {
-      setSearchTerm(search)
-      console.log(search)
+      setSearchTerm(search.target[0].value)
+      // console.log(search.target[0].value)
       search.preventDefault()
       // fetch('http://localhost:8080/boardgame/add', {
       //    method: 'POST',
@@ -23,8 +23,9 @@ const Display = () => {
       //    .catch(err => console.log(err))
       // search.target.reset();
    }
-   const getWeather = (city) => {
-      fetch("https://goweather.herokuapp.com/weather/" + city)
+
+   const getWeather = () => {
+      fetch("https://goweather.herokuapp.com/weather/" + searchTerm)
          .then(response => response.json())
          .then(json => setWeather(json))
    }
@@ -32,8 +33,7 @@ const Display = () => {
    // object has .description .forecast.(0-3) .temperature .wind
 
    useEffect(() => {
-      console.log(weather)
-      getWeather(searchTerm)
+      getWeather()
    }, [searchTerm]);
 
 
