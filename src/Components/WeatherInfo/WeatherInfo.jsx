@@ -1,12 +1,13 @@
 import React from 'react'
 
 const WeatherInfo = (props) => {
-   const { description, temperature, wind } = props;
+   const { condition, temp, wind } = props;
+
 
    return (
       <div>
-         <h2>{description}</h2>
-         <h2>{temperature}</h2>
+         <h2>{condition}</h2>
+         <h2>{temp}</h2>
          <h2>{wind}</h2>
       </div>
    )
