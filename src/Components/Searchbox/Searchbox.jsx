@@ -2,7 +2,7 @@ import React from 'react'
 
 const Searchbox = (props) => {
    // console.log(props)
-   const { searchTerm, setSearchTerm, handleSubmit } = props;
+   const { setSearchTerm, handleSubmit } = props;
    return (
       <div>
          <form onSubmit={(search) => handleSubmit(search)}>
